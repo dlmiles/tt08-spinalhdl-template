@@ -1,3 +1,64 @@
+# SpinalHDL Project
+
+This directory is based on the SpinalTemplateSbt project found at:
+
+git clone https://github.com/SpinalHDL/SpinalTemplateSbt spinalhdl
+
+Using the version from:
+
+```
+commit 8456715b1c403daf6e88b4348fb6208a3582b074 (HEAD -> master, origin/master, origin/HEAD)
+Author: Dolu1990 <charles.papon.90@gmail.com>
+Date:   Thu Jul 4 10:10:06 2024 +0200
+
+    SpinalHDL 1.10.2a
+```
+
+Inside the folder include examples of using SpinalHDL with design source,
+simulation/testbench and formal verification.
+
+The following information maybe useful to setup a local development environment.
+
+
+```sh
+# Install Java 17 LTS
+$ apt-get install openjdk-17-jdk
+# Install sbt https://www.scala-sbt.org/download/
+
+# Once installed you should be able to run commands line this
+$ java -version
+java version "17.0.6" 2023-01-17 LTS
+Java(TM) SE Runtime Environment (build 17.0.6+9-LTS-190)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.6+9-LTS-190, mixed mode, sharing)
+
+$ sbt -V
+sbt version in this project: 1.6.0
+sbt script version: 1.8.2
+```
+
+### Useful commands
+```sh
+$ sbt clean
+$ sbt compile
+$ sbt test
+
+# To generate the Verilog from the example
+sbt "runMain projectname.MyTopLevelVerilog"
+
+# To generate the VHDL from the example
+sbt "runMain projectname.MyTopLevelVhdl"
+
+# To run the testbench
+sbt "runMain projectname.MyTopLevelSim"
+
+# To run Formal verification
+sbt "runMain projectname.MyTopLevelFormal"
+```
+
+### The following below is the original upstream README.md information
+
+---
+
 # SpinalHDL Base Project
 
 This repository is a base project to help Spinal users set-up project without knowledge about Scala and SBT.
